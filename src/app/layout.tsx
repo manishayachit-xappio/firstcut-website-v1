@@ -2,8 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "First Cut",
-  description: "Your footage already knows the story.",
+  metadataBase: new URL("https://firstcut.film"),
+  title: "First Cut | The film is already in there",
+  description:
+    "First Cut watches your raw footage, finds the story, builds the first cut, and lets you direct the edit through conversation.",
+  alternates: {
+    canonical: "https://firstcut.film",
+  },
+  openGraph: {
+    title: "First Cut | The film is already in there",
+    description:
+      "First Cut watches your raw footage, finds the story, builds the first cut, and lets you direct the edit through conversation.",
+    url: "https://firstcut.film",
+    siteName: "First Cut",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
