@@ -43,13 +43,15 @@ export function ManifestoAccessScene() {
         <div className="mx-auto mt-20 max-w-4xl space-y-16 text-center sm:mt-28 sm:space-y-24">
           {revolutions.map((r) => (
             <Reveal key={r.eyebrow}>
-              <p
-                className={`font-mono text-[11px] uppercase tracking-[0.32em] sm:text-xs ${
-                  r.climax ? "text-ember" : "text-muted"
+              <span
+                className={`inline-block rounded-lg px-4 py-2 font-mono text-[11px] uppercase tracking-[0.32em] sm:text-xs ${
+                  r.climax
+                    ? "border border-ember bg-ember text-white shadow-[0_0_34px_rgba(198,154,91,0.4)]"
+                    : "border border-ember/30 bg-ember/[0.04] text-ember/80"
                 }`}
               >
                 {r.eyebrow}
-              </p>
+              </span>
               <p
                 className={`mx-auto mt-5 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl ${
                   r.climax ? "text-ember" : "text-foreground"
