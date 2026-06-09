@@ -4,10 +4,14 @@ import { FormEvent, useState } from "react";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+  const [project, setProject] = useState("");
+  const [footage, setFootage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
 
@@ -16,8 +20,31 @@ export function WaitlistForm() {
       return;
     }
 
-    // TODO: Wire this form to Supabase waitlist table in the next implementation pass.
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, role, project, footage }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        setError(
+          data?.error ?? "Something went wrong. Please try again in a moment.",
+        );
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(
+        "We could not reach the server. Check your connection and try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -59,6 +86,8 @@ export function WaitlistForm() {
           id="role"
           name="role"
           type="text"
+          value={role}
+          onChange={(event) => setRole(event.target.value)}
           className="w-full border border-line bg-background px-4 py-3 text-foreground outline-none transition focus:border-ember"
           autoComplete="organization-title"
         />
@@ -68,6 +97,8 @@ export function WaitlistForm() {
           id="project"
           name="project"
           rows={4}
+          value={project}
+          onChange={(event) => setProject(event.target.value)}
           className="w-full resize-none border border-line bg-background px-4 py-3 text-foreground outline-none transition focus:border-ember"
         />
       </Field>
@@ -79,14 +110,17 @@ export function WaitlistForm() {
           id="footage"
           name="footage"
           type="text"
+          value={footage}
+          onChange={(event) => setFootage(event.target.value)}
           className="w-full border border-line bg-background px-4 py-3 text-foreground outline-none transition focus:border-ember"
         />
       </Field>
       <button
         type="submit"
-        className="w-full border border-ember/50 bg-ember px-5 py-3 text-sm font-medium text-background transition hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-background"
+        disabled={submitting}
+        className="w-full border border-ember/50 bg-ember px-5 py-3 text-sm font-medium text-background transition hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-background disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-ember"
       >
-        Request access
+        {submitting ? "Sending…" : "Request access"}
       </button>
     </form>
   );
