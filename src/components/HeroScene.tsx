@@ -10,6 +10,16 @@ const fragments = [
   "06:19:04 ending beat",
 ];
 
+// Quiet "machine waking up" status read-out for the hero background.
+const awakening = [
+  { text: "WATCHING FOOTAGE", strong: false },
+  { text: "SCENE GRAPH ONLINE", strong: false },
+  { text: "MOMENT CANDIDATES FOUND: 42", strong: false },
+  { text: "STORY SPINE DETECTED", strong: false },
+  { text: "SILENCE / HANDS / MEMORY / FAMILY", strong: false },
+  { text: "FIRST CUT SEED READY", strong: true },
+];
+
 export function HeroScene() {
   return (
     <section
@@ -73,7 +83,29 @@ function DormantFootage() {
           ))}
         </div>
       </div>
+      <SystemAwakening />
       <div className="scan-line absolute left-0 top-0 h-32 w-full bg-gradient-to-b from-transparent via-ember/10 to-transparent" />
+    </div>
+  );
+}
+
+function SystemAwakening() {
+  return (
+    <div className="absolute right-[6%] top-1/2 hidden -translate-y-1/2 flex-col gap-3 lg:flex 2xl:right-[34%]">
+      {awakening.map((line, index) => (
+        <div
+          key={line.text}
+          className={`${line.strong ? "awaken-strong" : "awaken"} flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] ${
+            line.strong ? "text-ember" : "text-muted"
+          }`}
+          style={{ "--awaken-delay": `${600 + index * 520}ms` } as React.CSSProperties}
+        >
+          <span
+            className={`h-1 w-1 rounded-full ${line.strong ? "bg-ember" : "bg-muted/60"}`}
+          />
+          {line.text}
+        </div>
+      ))}
     </div>
   );
 }

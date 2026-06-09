@@ -27,7 +27,10 @@ export function ManifestoAccessScene() {
             <h3 className="text-3xl font-semibold leading-tight sm:text-4xl">
               Private access opens in waves.
             </h3>
-            <p className="mt-5 text-base leading-7 text-muted">
+            <p className="mt-5 text-base leading-7 text-foreground">
+              We are not looking for everyone.
+            </p>
+            <p className="mt-3 text-base leading-7 text-muted">
               We are starting with people who have real footage, real deadlines,
               and real stories buried inside the mess.
             </p>
