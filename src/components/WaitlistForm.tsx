@@ -118,7 +118,7 @@ export function WaitlistForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="inline-flex w-fit items-center justify-center whitespace-nowrap border border-ember/50 bg-ember px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-background disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-ember"
+        className="w-full border border-ember/50 bg-ember px-5 py-3 text-sm font-medium text-background transition hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-background disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-ember"
       >
         {submitting ? "Sending…" : "Request access"}
       </button>

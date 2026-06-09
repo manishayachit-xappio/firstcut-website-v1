@@ -40,7 +40,7 @@ export function HeroScene() {
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
             <a
               href="#access"
-              className="inline-flex w-fit items-center justify-center border border-ember/50 bg-ember px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-background"
+              className="inline-flex w-fit shrink-0 items-center justify-center whitespace-nowrap border border-ember/50 bg-ember px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-ember focus:ring-offset-2 focus:ring-offset-background"
             >
               Request access
             </a>
