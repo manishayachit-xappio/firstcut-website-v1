@@ -1,3 +1,6 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
 
 export const alt = "First Cut";
@@ -7,7 +10,10 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logo = await readFile(join(process.cwd(), "public/fc-mark.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -35,15 +41,18 @@ export default function Image() {
             width: "100%",
           }}
         >
-          <div
-            style={{
-              color: "#c69a5b",
-              fontSize: 24,
-              letterSpacing: 6,
-              textTransform: "uppercase",
-            }}
-          >
-            First Cut
+          <div style={{ alignItems: "center", display: "flex", gap: 22 }}>
+            <img src={logoSrc} alt="" width={58} height={69} />
+            <div
+              style={{
+                color: "#c69a5b",
+                fontSize: 24,
+                letterSpacing: 6,
+                textTransform: "uppercase",
+              }}
+            >
+              First Cut
+            </div>
           </div>
           <div style={{ fontSize: 88, fontWeight: 600, lineHeight: 0.94 }}>
             The film is already in there.
