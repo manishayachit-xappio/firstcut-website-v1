@@ -1,3 +1,5 @@
+import { StorySpineCanvas } from "@/components/StorySpineCanvas";
+
 const fragments = [
   "CARMEN_DOC_RAW",
   "187 clips",
@@ -117,13 +119,16 @@ function AwakeningCompact() {
 function DormantFootage() {
   return (
     <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+      {/* Living layer: footage moments resolving into a story spine. Sits at
+          the very back; the cinematic gradients below tint and frame it. */}
+      <StorySpineCanvas />
       {/* Cinematic key light: a warm ember dawn breaking over the top edge,
           layered with a deeper amber undertone, then settling into black. */}
-      <div className="absolute inset-0 bg-[radial-gradient(130%_85%_at_50%_-12%,rgba(214,168,98,0.30),transparent_56%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(90%_62%_at_64%_-4%,rgba(143,48,40,0.26),transparent_52%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(70%_45%_at_50%_-6%,rgba(245,222,182,0.12),transparent_44%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(130%_85%_at_50%_-12%,rgba(214,168,98,0.24),transparent_56%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(90%_62%_at_64%_-4%,rgba(143,48,40,0.20),transparent_52%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_45%_at_50%_-6%,rgba(245,222,182,0.10),transparent_44%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ember/45 to-transparent" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_30%,#080706_96%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_38%,rgba(8,7,6,0.42)_78%,#080706_98%)]" />
       <div className="slow-float absolute left-1/2 top-24 h-[640px] w-[860px] -translate-x-1/2 rounded-full border border-ember/15 opacity-50 blur-2xl" />
       <div className="absolute bottom-16 left-[8%] hidden w-[86%] max-w-5xl border-y border-line py-5 opacity-60 md:block">
         <div className="flex min-w-max gap-8 font-mono text-xs text-muted">
