@@ -4,18 +4,18 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://firstcut.film"),
+  metadataBase: new URL("https://www.firstcut.film"),
   title: "First Cut | The film is already in there",
   description:
     "First Cut watches your raw footage, finds the story, builds the first cut, and lets you direct the edit through conversation.",
   alternates: {
-    canonical: "https://firstcut.film",
+    canonical: "https://www.firstcut.film",
   },
   openGraph: {
     title: "First Cut | The film is already in there",
     description:
       "First Cut watches your raw footage, finds the story, builds the first cut, and lets you direct the edit through conversation.",
-    url: "https://firstcut.film",
+    url: "https://www.firstcut.film",
     siteName: "First Cut",
     type: "website",
   },
@@ -28,22 +28,22 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://firstcut.film/#organization",
+      "@id": "https://www.firstcut.film/#organization",
       name: "First Cut",
-      url: "https://firstcut.film",
+      url: "https://www.firstcut.film",
       logo: {
         "@type": "ImageObject",
-        url: "https://firstcut.film/icon.png",
+        url: "https://www.firstcut.film/icon.png",
         width: 512,
         height: 512,
       },
     },
     {
       "@type": "WebSite",
-      "@id": "https://firstcut.film/#website",
+      "@id": "https://www.firstcut.film/#website",
       name: "First Cut",
-      url: "https://firstcut.film",
-      publisher: { "@id": "https://firstcut.film/#organization" },
+      url: "https://www.firstcut.film",
+      publisher: { "@id": "https://www.firstcut.film/#organization" },
     },
   ],
 };

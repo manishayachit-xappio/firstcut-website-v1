@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://firstcut.film/sitemap.xml",
-    host: "https://firstcut.film",
+    sitemap: "https://www.firstcut.film/sitemap.xml",
+    host: "https://www.firstcut.film",
   };
 }
