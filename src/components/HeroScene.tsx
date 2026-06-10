@@ -24,18 +24,18 @@ export function HeroScene() {
   return (
     <section
       id="top"
-      className="film-grain relative flex min-h-screen overflow-hidden pt-16"
+      className="film-grain vignette relative flex min-h-screen overflow-hidden pt-16"
     >
       <DormantFootage />
       <div className="scene-shell relative z-10 grid min-h-[calc(100vh-4rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <div className="max-w-3xl">
           <p className="timecode mb-7">First Cut / private beta</p>
-          <h1 className="text-6xl font-semibold leading-[0.92] tracking-normal text-foreground sm:text-7xl md:text-8xl">
-            The film is already in there.
+          <h1 className="text-6xl font-semibold leading-[0.92] tracking-[-0.02em] text-foreground sm:text-7xl md:text-8xl">
+            The fastest way from footage to story
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-            First Cut watches your raw footage, finds the story, builds the
-            first cut, and lets you direct the edit through conversation.
+            First Cut turns hours of raw video into a first edit you can watch,
+            revise, and share.
           </p>
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
             <a
@@ -117,8 +117,14 @@ function AwakeningCompact() {
 function DormantFootage() {
   return (
     <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_18%,rgba(143,48,40,0.18),transparent_34%),linear-gradient(180deg,rgba(8,7,6,0.2),#080706_94%)]" />
-      <div className="absolute left-1/2 top-28 h-[680px] w-[880px] -translate-x-1/2 rounded-full border border-line opacity-40 blur-3xl" />
+      {/* Cinematic key light: a warm ember dawn breaking over the top edge,
+          layered with a deeper amber undertone, then settling into black. */}
+      <div className="absolute inset-0 bg-[radial-gradient(130%_85%_at_50%_-12%,rgba(214,168,98,0.30),transparent_56%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(90%_62%_at_64%_-4%,rgba(143,48,40,0.26),transparent_52%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_45%_at_50%_-6%,rgba(245,222,182,0.12),transparent_44%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ember/45 to-transparent" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_30%,#080706_96%)]" />
+      <div className="slow-float absolute left-1/2 top-24 h-[640px] w-[860px] -translate-x-1/2 rounded-full border border-ember/15 opacity-50 blur-2xl" />
       <div className="absolute bottom-16 left-[8%] hidden w-[86%] max-w-5xl border-y border-line py-5 opacity-60 md:block">
         <div className="flex min-w-max gap-8 font-mono text-xs text-muted">
           {fragments.map((fragment) => (
