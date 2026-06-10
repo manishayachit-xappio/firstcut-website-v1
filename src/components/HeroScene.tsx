@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { StorySpineCanvas } from "@/components/StorySpineCanvas";
 
 const fragments = [
@@ -31,6 +33,14 @@ export function HeroScene() {
       <DormantFootage />
       <div className="scene-shell relative z-10 grid min-h-[calc(100vh-4rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <div className="max-w-3xl">
+          <Image
+            src="/fc-mark.png"
+            alt="First Cut"
+            width={463}
+            height={549}
+            priority
+            className="slow-float mb-8 h-20 w-auto drop-shadow-[0_0_34px_rgba(198,154,91,0.4)] sm:h-24"
+          />
           <p className="timecode mb-7">First Cut / private beta</p>
           <h1 className="text-6xl font-semibold leading-[0.92] tracking-[-0.02em] text-foreground sm:text-7xl md:text-8xl">
             The fastest way from footage to story
