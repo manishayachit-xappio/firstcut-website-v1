@@ -5,16 +5,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.firstcut.film"),
-  title: "First Cut | The film is already in there",
+  title: "First Cut | The fastest way from footage to story",
   description:
-    "First Cut watches your raw footage, finds the story, builds the first cut, and lets you direct the edit through conversation.",
+    "First Cut turns hours of raw video into a first edit you can watch, revise, and share.",
   alternates: {
     canonical: "https://www.firstcut.film",
   },
   openGraph: {
-    title: "First Cut | The film is already in there",
+    title: "First Cut | The fastest way from footage to story",
     description:
-      "First Cut watches your raw footage, finds the story, builds the first cut, and lets you direct the edit through conversation.",
+      "First Cut turns hours of raw video into a first edit you can watch, revise, and share.",
     url: "https://www.firstcut.film",
     siteName: "First Cut",
     type: "website",

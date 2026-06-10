@@ -54,11 +54,12 @@ export default async function Image() {
               First Cut
             </div>
           </div>
-          <div style={{ fontSize: 88, fontWeight: 600, lineHeight: 0.94 }}>
-            The film is already in there.
+          <div style={{ fontSize: 84, fontWeight: 600, lineHeight: 0.96 }}>
+            The fastest way from footage to story
           </div>
-          <div style={{ color: "#aaa198", fontSize: 30 }}>
-            Editing starts before the timeline now.
+          <div style={{ color: "#aaa198", fontSize: 30, lineHeight: 1.3 }}>
+            First Cut turns hours of raw video into a first edit you can watch,
+            revise, and share.
           </div>
         </div>
       </div>
