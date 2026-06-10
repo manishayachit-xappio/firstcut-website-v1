@@ -21,6 +21,33 @@ export const metadata: Metadata = {
   },
 };
 
+// Structured data so search engines can associate the brand, its logo, and
+// the canonical site. Kept in sync with the visible metadata above.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://firstcut.film/#organization",
+      name: "First Cut",
+      url: "https://firstcut.film",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://firstcut.film/icon.png",
+        width: 512,
+        height: 512,
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://firstcut.film/#website",
+      name: "First Cut",
+      url: "https://firstcut.film",
+      publisher: { "@id": "https://firstcut.film/#organization" },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,6 +59,10 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         {/* Filmic grain over the whole frame. Subtle, analog, intentional. */}
         <div aria-hidden="true" className="grain-overlay" />
