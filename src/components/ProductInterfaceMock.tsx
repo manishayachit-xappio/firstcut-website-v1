@@ -17,7 +17,7 @@ const processing = [
   "Watching footage...",
   "Finding scenes...",
   "Mapping story beats...",
-  "Building moment graph...",
+  "Shaping the first cut...",
 ];
 
 const moments = [
@@ -62,7 +62,7 @@ export function ProductInterfaceMock() {
     >
       <div className="flex items-center justify-between border-b border-line px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-muted sm:px-6">
         <span>First Cut Studio</span>
-        <span className="text-ember">moment graph online</span>
+        <span className="text-ember">footage mapped</span>
       </div>
       <div className="grid gap-px bg-line lg:grid-cols-[0.82fr_1.08fr_1fr]">
         <IngestPanel />
@@ -219,7 +219,7 @@ function CutPanel() {
         style={delay(2480)}
       >
         <div className="mb-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em] text-muted">
-          <span>story spine confidence</span>
+          <span>story confidence</span>
           <span className="text-ember">strong</span>
         </div>
         <div className="h-1 w-full overflow-hidden bg-foreground/10">

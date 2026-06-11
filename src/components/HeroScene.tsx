@@ -17,11 +17,11 @@ const fragments = [
 // Quiet "machine waking up" status read-out shown beside the headline.
 const awakening = [
   { text: "WATCHING FOOTAGE", strong: false },
-  { text: "SCENE GRAPH ONLINE", strong: false },
-  { text: "MOMENT CANDIDATES FOUND: 42", strong: false },
-  { text: "STORY SPINE DETECTED", strong: false },
+  { text: "UNDERSTANDING STORY", strong: false },
+  { text: "FINDING THE MOMENTS", strong: false },
+  { text: "STRUCTURE EMERGING", strong: false },
   { text: "SILENCE / HANDS / MEMORY / FAMILY", strong: false },
-  { text: "FIRST CUT SEED READY", strong: true },
+  { text: "FIRST CUT READY", strong: true },
 ];
 
 export function HeroScene() {
